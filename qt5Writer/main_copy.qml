@@ -1,6 +1,6 @@
 import QtQuick 2.12
 import QtQuick.Controls 2.5
-import QtQuick.Controls.Material 2.4
+
 
 ApplicationWindow {
     id: window
@@ -9,12 +9,9 @@ ApplicationWindow {
     height: 600
     title: qsTr("Stack")
 
-    Material.accent: "#6d4c41"
-
-
-
     header: ToolBar {
         contentHeight: toolButton.implicitHeight
+
         ToolButton {
             id: toolButton
             text: stackView.depth > 1 ? "\u25C0" : "\u2630"
@@ -65,9 +62,7 @@ ApplicationWindow {
 
     StackView {
         id: stackView
-        anchors.fill: parent
         initialItem: "HomeForm.ui.qml"
+        anchors.fill: parent
     }
-
-
-}
+ }

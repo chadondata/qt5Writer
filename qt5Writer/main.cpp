@@ -1,5 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
+#include <QFontDatabase>
 
 int main(int argc, char *argv[])
 {
@@ -15,6 +16,8 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
     engine.load(url);
+    qputenv("QT_QUICK_CONTROLS_STYLE", "material");
 
+    QFontDatabase::addApplicationFont(":/materialdesignicons-webfont.ttf");
     return app.exec();
 }
